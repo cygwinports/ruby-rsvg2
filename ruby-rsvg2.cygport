@@ -1,11 +1,17 @@
 inherit rubygem
 
 NAME="ruby-rsvg2"
-VERSION=2.0.2
+VERSION=2.2.0
 RELEASE=1
 CATEGORY="Ruby"
 SUMMARY="Ruby RSVG bindings"
 DESCRIPTION="Ruby/RSVG is a Ruby binding of librsvg-2.x."
 HOMEPAGE="http://ruby-gnome2.sourceforge.jp/"
 
-DEPS_PATH="/usr/lib/ruby/gems/${RUBY_VERSION}/gems/cairo-*/lib:/usr/lib/ruby/gems/${RUBY_VERSION}/gems/glib2-*/lib"
+PKG_NAMES="${NAME} ${NAME}-devel ${NAME}-doc"
+ruby_rsvg2_CONTENTS="--exclude=sample ${RUBYGEM_EXTDIR#/} ${RUBYGEM_INSTDIR#/} ${RUBYGEM_SPEC#/}"
+ruby_rsvg2_devel_REQUIRES="${NAME} ruby-glib2-devel librsvg2-devel"
+ruby_rsvg2_devel_CONTENTS="usr/lib/lib*.a usr/lib/pkgconfig/"
+ruby_rsvg2_doc_CONTENTS="${RUBYGEM_DOCDIR#/} ${RUBYGEM_INSTDIR#/}/sample/"
+
+DEPS_PATH="${RUBYGEM_EXTDIR%/*}/cairo-1*:${RUBYGEM_EXTDIR%/*}/glib2-${VERSION}"
