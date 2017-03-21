@@ -1,12 +1,14 @@
 inherit rubygem
 
 NAME="ruby-rsvg2"
-VERSION=2.2.5
+VERSION=3.1.1
 RELEASE=1
 CATEGORY="Ruby"
 SUMMARY="Ruby RSVG bindings"
 DESCRIPTION="Ruby/RSVG is a Ruby binding of librsvg-2.x."
 HOMEPAGE="http://ruby-gnome2.sourceforge.jp/"
+
+PATCH_URI="3.1.1-link-deps.patch"
 
 PKG_NAMES="${NAME} ${NAME}-devel ${NAME}-doc"
 ruby_rsvg2_CONTENTS="--exclude=sample ${RUBYGEM_EXTDIR#/} ${RUBYGEM_INSTDIR#/} ${RUBYGEM_SPEC#/}"

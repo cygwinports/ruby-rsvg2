@@ -1,0 +1,11 @@
+--- origsrc/rsvg2-3.1.1/ext/rsvg2/extconf.rb	2017-03-19 18:36:34.045387200 -0500
++++ src/rsvg2-3.1.1/ext/rsvg2/extconf.rb	2017-03-19 18:42:51.262845700 -0500
+@@ -30,7 +30,7 @@ rescue LoadError
+   require 'mkmf-gnome2'
+ end
+ 
+-["glib2", "gdk_pixbuf2"].each do |package|
++["glib2"].each do |package|
+   directory = "#{package}#{version_suffix}"
+   build_dir = "#{directory}/tmp/#{RUBY_PLATFORM}/#{package}/#{RUBY_VERSION}"
+   add_depend_package(package, "#{directory}/ext/#{package}",
