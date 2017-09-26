@@ -10,7 +10,7 @@ HOMEPAGE="http://ruby-gnome2.sourceforge.jp/"
 
 PKG_NAMES="${NAME} ${NAME}-doc"
 ruby_rsvg2_REQUIRES="girepository-Rsvg2.0 ruby-gobject-introspection"
-ruby_rsvg2_OBSOLETES="${NAME}-devel"
+ruby_rsvg2_OBSOLETES="${NAME}-devel ${NAME}-debuginfo"
 ruby_rsvg2_CONTENTS="--exclude=sample ${RUBYGEM_EXTDIR#/} ${RUBYGEM_INSTDIR#/} ${RUBYGEM_SPEC#/}"
 ruby_rsvg2_doc_CONTENTS="${RUBYGEM_DOCDIR#/} ${RUBYGEM_INSTDIR#/}/sample/"
 
